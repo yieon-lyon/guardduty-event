@@ -1,0 +1,13 @@
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "kms:Decrypt",
+        "Resource": "arn:aws:kms:REGION:XXXXXXXXXXXX:key/KMS_ID",
+        "Condition": {
+            "StringEquals": {
+                "kms:EncryptionContext:LambdaFunctionName": "LAMBDA_NAME"
+            }
+        }
+    }
+}
